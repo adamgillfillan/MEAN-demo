@@ -8,7 +8,7 @@ mongoose.connect('mongodb://localhost:27017/mean-demo');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
-  extended: true
+	extended: true
 }));
 
 app.get('/', function(req, res){

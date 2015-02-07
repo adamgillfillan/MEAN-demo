@@ -7,9 +7,6 @@ var express           = require('express'),
 mongoose.connect('mongodb://localhost:27017/mean-demo');
 
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({
-    extended: true
-}));
 
 app.get('/', function(req, res){
     res.sendfile(__dirname + '/client/views/index.html');

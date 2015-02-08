@@ -20,16 +20,19 @@
                     <tr>
                         <th>Meetup Name</th>
                         <th>Action</th>
+                        <th>&nbsp;</th>
                     </tr>
                 </thead>
                 <tbody>
                     <form>
-                        <td><input type="text" placeholder="Meetup Name" ng-model="meetupName"></input></td>
+                        <td><input type="text" placeholder="Meetup Name" ng-model="meetup.name"></input></td>
                         <td><button type="submit" class="btn btn-primary" ng-click="createMeetup()">Add</button></td>
+                        <td><button type="submit" class="btn btn-info" ng-click="updateMeetup()">Update</button></td>
                     </form>
                     <tr ng-repeat="meetup in meetups">
                         <td>{{meetup.name}}</td>
                         <td><button class="btn btn-danger" ng-click="removeMeetup(meetup)">Delete</button></td>
+                        <td><button class="btn btn-danger" ng-click="editMeetup(meetup)">Edit</button></td>
                     </tr>
                 </tbody>
             </table>

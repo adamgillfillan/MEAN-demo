@@ -17,7 +17,8 @@ app.use('/js', express.static(__dirname + '/client/js'));
 //REST API
 app.get('/RESTapi/meetups', meetupsController.list);
 app.post('/RESTapi/meetups', meetupsController.create);
+app.delete('/RESTapi/meetups/:id', meetupsController.deleteMeetup);
 
 app.listen(3000, function() {
     console.log('I\'m Listening...');
-})
+});

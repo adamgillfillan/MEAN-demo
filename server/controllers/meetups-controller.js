@@ -12,3 +12,9 @@ module.exports.list = function (req, res) {
         res.json(results);
     });
 }
+
+module.exports.deleteMeetup = function (req, res) {
+    Meetup.remove({ _id: req.params.id }, function (err) {
+        res.json(true);
+    });
+};

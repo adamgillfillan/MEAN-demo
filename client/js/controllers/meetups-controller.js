@@ -13,28 +13,25 @@ app.controller('meetupsController', ['$scope', '$resource', function($scope, $re
     };
     refresh();
 
-    $scope.createMeetup = function(){
-        var meetup = new Meetup();
-        meetup.name = $scope.meetup.name;
-        meetup.$save(function (result){
+    $scope.create = function(){
+        Meetup.save($scope.meetup, function (result){
             $scope.meetups.push(result);
         });
-        $scope.meetup.name = '';
+        $scope.meetup = '';
     };
 
-    $scope.removeMeetup = function (meetup){
-        console.log(meetup.id)
-        Meetup.delete(meetup)
+    $scope.destroy = function (meetup){
+        Meetup.delete(meetup);
+        
         var index = $scope.meetups.indexOf(meetup);
         $scope.meetups.splice(index,1);
     };
 
-    $scope.editMeetup = function (meetup){
-        console.log(meetup);
+    $scope.edit = function (meetup){
         $scope.meetup = Meetup.get(meetup);
     };
 
-    $scope.updateMeetup = function (){
+    $scope.update = function (){
         Meetup.get($scope.meetup, function(result){
             Meetup.update(result, $scope.meetup, function(result){
                 refresh();

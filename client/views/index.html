@@ -26,13 +26,13 @@
                 <tbody>
                     <form>
                         <td><input type="text" placeholder="Meetup Name" ng-model="meetup.name"></input></td>
-                        <td><button type="submit" class="btn btn-primary" ng-click="createMeetup()">Add</button></td>
-                        <td><button type="submit" class="btn btn-info" ng-click="updateMeetup()">Update</button></td>
+                        <td><button type="submit" class="btn btn-primary" ng-click="create()">Add</button></td>
+                        <td><button type="submit" class="btn btn-info" ng-click="update()">Update</button></td>
                     </form>
                     <tr ng-repeat="meetup in meetups">
                         <td>{{meetup.name}}</td>
-                        <td><button class="btn btn-danger" ng-click="removeMeetup(meetup)">Delete</button></td>
-                        <td><button class="btn btn-danger" ng-click="editMeetup(meetup)">Edit</button></td>
+                        <td><button class="btn btn-danger" ng-click="destroy(meetup)">Delete</button></td>
+                        <td><button class="btn btn-danger" ng-click="edit(meetup)">Edit</button></td>
                     </tr>
                 </tbody>
             </table>
